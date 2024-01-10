@@ -2,7 +2,7 @@ require_relative 'weather_station'
 
 class Stations
   def self.ary
-    [
+    @ary ||= [
       WeatherStation.new("Abha", 18.0),
       WeatherStation.new("Abidjan", 26.0),
       WeatherStation.new("Abéché", 29.4),

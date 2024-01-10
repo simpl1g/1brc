@@ -1,12 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    parallel (1.24.0)
+    polars-df (0.6.0)
+      rb_sys
+    rb_sys (0.9.86)
     ruby-prof (1.7.0)
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-23
 
 DEPENDENCIES
+  parallel
+  polars-df (~> 0.6.0)
   ruby-prof (~> 1.7)
 
 BUNDLED WITH

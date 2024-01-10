@@ -10,6 +10,10 @@ class WeatherStation
     @mean_temperature = mean_temperature
   end
 
+  def to_file_str
+    "#{location};#{measurement}"
+  end
+
   # random gaussian
   def measurement
     (SecureRandom.random_number * STANDARD_DEVIATION + mean_temperature).round(1)

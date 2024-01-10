@@ -6,10 +6,12 @@ MEASUREMENTS_FILE_NAME = 'measurements.txt'
 
 iterations = ARGV.first.to_i
 
-measurements_file = File.open(MEASUREMENTS_FILE_NAME, 'w')
-
-iterations.times do
+File.open(MEASUREMENTS_FILE_NAME, 'w') do |measurements_file|
   stations_size = Stations.ary.size
-  station = Stations.ary[SecureRandom.random_number(stations_size)]
-  measurements_file.puts "#{station.location};#{station.measurement}"
+  i = 0
+  while i < iterations do
+    i += 1
+    station = Stations.ary.sample
+    measurements_file.puts(station.to_file_str)
+  end
 end
